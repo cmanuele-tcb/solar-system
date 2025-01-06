@@ -118,6 +118,11 @@ jobs:
             with:
                 name: Mocha-Test-Result
 
+          - name: Download Code Coverage Artifact
+            uses: actions/download-artifact@v3
+            with:
+                name: Code-Coverage-Result
+
           - name: Merge Test Files
             run: |
               ls -ltr
