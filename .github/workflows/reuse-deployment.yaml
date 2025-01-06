@@ -27,7 +27,10 @@ on:
                 required: true
             mongodb-password:
                 required: true
-            
+        
+        outputs:
+            application-url:
+                value: ${{ jobs.reuse-deploy.output.APP_INGRESS_URL}}
 jobs:
     reuse_deploy:
         environment:
