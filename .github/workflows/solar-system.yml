@@ -121,9 +121,10 @@ jobs:
           - name: Merge Test Files
             run: |
               ls -ltr
-              mkdir reports-${{ github.sha }} /
-              mv cobertura-coverage.xml reports-${{ github.sha }} / 
-              ls -ltr reports-${{ github.sha }} /
+              mkdir reports-${{ github.sha }} 
+              mv cobertura-coverage.xml reports-${{ github.sha }}/ 
+              mv test-results.xml reports-${{ github.sha }}/
+              ls -ltr reports-${{ github.sha }}/
             
           - name: lUpload to AWS S3
             run: echo "uploading...."
